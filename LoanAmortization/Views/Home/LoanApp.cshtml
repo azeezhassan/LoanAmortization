@@ -1,0 +1,116 @@
+﻿@model LoanAmortization.Models.SearchFormView
+
+@{
+    ViewBag.Title = "LoanApp";
+}
+
+<h1>Amortization Load Calculation App</h1>
+
+<div class="row">
+    <div class="col-md-10">
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">
+                <h4>Loan Details</h4>
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    @Html.LabelFor(model => model.LoanPrincipal, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        <input type="text" id="LoanPrincipal" name="LoanPrincipal"
+                                class="form-control" placeholder="Enter Loan Value" value="@ViewBag.Principal"/>
+                     
+                        @Html.ValidationMessageFor(model => model.LoanPrincipal, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.NoOfPaymentYears, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.NoOfPaymentYears, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.NoOfPaymentYears, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.NoOfYearlyInstallmentalPayments, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.NoOfYearlyInstallmentalPayments, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.NoOfYearlyInstallmentalPayments, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.InterestRate, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.InterestRate, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.InterestRate, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.PaymentStartDate, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.PaymentStartDate, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.PaymentStartDate, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Calculate Loan" class="btn btn-default" />
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+    <div class="col-md-2">
+        <br/>
+        <div class="form-group">
+            <label>Principal</label>
+            <p>@ViewBag.Principal</p>
+        </div>
+        <div class="form-group">
+            <label>Cummulative Interest</label>
+            <p>@ViewBag.Interest</p>
+        </div>
+        <div class="form-group">
+            <label>Scheduled Payment</label>
+            <p>@ViewBag.Payment</p>
+        </div>
+        <div class="form-group">
+            <label>Scheduled Number of Payments</label>
+            <p>@ViewBag.PaymentNumber</p>
+        </div>
+    </div>
+</div>
+
+<hr/>
+<div id="LoanSection">
+@Html.Action("LoanData", "Home", new { LoanData = ViewBag.LoanData, pagenumber = ViewBag.PageNumber })
+</div>
+<div>
+    @for (int i = 1; i <= ViewBag.Pages; i++)
+    {
+        <a onclick="getpagedata(@i)" href="javacript:void(0)">@i</a>
+    }
+</div>
+<script type="text/javascript">
+    $(function () {
+        function getpagedata(page) {
+            alert("Lock Down" + page);
+            $.ajax({
+                type: "POST",
+                url: "@(Url.Action("LoanData","Home"))",
+                data: { pagenumber: page,pagenavigation:"true"},
+                success: function (result) {
+                    
+                   // $('#LoanSection').html(result);
+                }
+            });
+            
+        }
+
+    });
+
+</script>

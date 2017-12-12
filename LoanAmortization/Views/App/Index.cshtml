@@ -1,0 +1,171 @@
+﻿@model PagedList.IPagedList<LoanAmortization.Models.LoanPaymentView>
+@using PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+@{
+    ViewBag.Title = "LoanApp";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Amortization Load Calculation App</h1>
+<div class="row">
+    <div class="col-md-10">
+        @using (Html.BeginForm("Index", "App", FormMethod.Get))
+        {
+            @Html.AntiForgeryToken()
+            <style>
+                label{
+                    text-align:left;
+                    font-size:90%;
+                    color:brown;
+                }
+            </style>
+            <span class="alert-danger">@ViewBag.Status</span>
+            <div class="form-horizontal">
+                <h4>Loan Details</h4>
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    @Html.Label("Loan Principal", htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        <input type="text" id="LoanPrincipal" name="LoanPrincipal"
+                               class="form-control" placeholder="Enter Loan Value" value="@ViewBag.Principal"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label  class="control-label col-md-2">Payment Duration In Years</label>
+                    <div class="col-md-10">
+                        <input type="text" id="NoOfPaymentYears" name="NoOfPaymentYears"
+                               class="form-control" placeholder="Enter Value" value="@ViewBag.YearsOfPayment" />
+                        </div>
+                </div>
+
+                <div class="form-group">
+                    <label  class="control-label col-md-2">No Of Yearly Installmental Payments</label>
+                    <div class="col-md-10">
+                        <input type="text" id="NoOfYearlyInstallmentalPayments" name="NoOfYearlyInstallmentalPayments"
+                               class="form-control" placeholder="Enter Loan Value" value="@ViewBag.PaymentsYearly"/>
+                         </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-md-2">Annual Interest Rate</label>
+                    <div class="col-md-10">
+                        <input type="text" id="InterestRate" name="InterestRate"
+                               class="form-control" placeholder="Enter Value" value="@ViewBag.InterestRate"/>
+                      
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label  class="control-label col-md-2">Payment Start Date</label>
+                    <div class="col-md-10">
+                        <input type="text" id="PaymentStartDate" name="PaymentStartDate"
+                               class="form-control" placeholder="Enter Value" value="@ViewBag.PaymentStartDate"/>
+                        </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Calculate Loan" class="btn btn-default" />
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+
+<div class="col-md-2">
+    <br />
+    <div class="form-group">
+        <label>Principal</label>
+        <p>@ViewBag.Principal</p>
+    </div>
+    <div class="form-group">
+        <label>Cummulative Interest</label>
+        <p>@ViewBag.Interest</p>
+    </div>
+    <div class="form-group">
+        <label>Scheduled Payment</label>
+        <p>@ViewBag.Payment</p>
+    </div>
+    <div class="form-group">
+        <label>Scheduled Number of Payments</label>
+        <p>@ViewBag.PaymentNumber</p>
+    </div>
+</div>
+</div>
+        <div class="row">
+            <table class="table">
+                <tr>
+                    <th>
+                        Payment Date
+                    </th>
+                    <th>
+                        @Html.DisplayName("PaymentNo")
+                    </th>
+                    <th>
+                        @Html.DisplayName("BeginningBalance")
+                    </th>
+                    <th>
+                        @Html.DisplayName("ScheduledPayment")
+                    </th>
+                    <th>
+                       @Html.DisplayName("PrincipalAmount")
+                    </th>
+                    <th>
+                        @Html.DisplayName("EndingBalance")
+                    </th>
+                    <th>
+                       @Html.DisplayName("InterestAmount")
+                    </th>
+                    <th>
+                        Cummulative <br /> Interest
+                    </th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.paymentDate)
+                        </td>
+                        <td>
+                            @{
+                                string intnu = String.Format("{0,10}", item.PaymentNo.ToString());
+                                string intno = item.PaymentNo.ToString("f1");
+                            }
+                            @intnu
+                        </td>
+                        <td>
+                            @{
+                                string begbal = String.Format("{0,10}", item.BeginningBalance);
+                            }
+                            @begbal
+
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ScheduledPayment)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.PrincipalAmount)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.EndingBalance)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.InterestAmount)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CummulativeInterestAmount)
+                        </td>
+                    </tr>
+                                }
+
+            </table>
+        </div>
+        <br />
+        Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)
+        of @Model.PageCount
+        @Html.PagedListPager(Model, page => Url.Action("Index",
+    new { page, LoanPrincipal=ViewBag.Principal, NoOfYearlyInstallmentalPayments=ViewBag.PaymentsYearly,
+        NoOfPaymentYears=ViewBag.YearsOfPayment, InterestRate= ViewBag.InterestRate,
+        PaymentStartDate =ViewBag.PaymentStartDate}))
+

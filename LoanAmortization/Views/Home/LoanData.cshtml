@@ -1,0 +1,72 @@
+﻿@model IEnumerable<LoanAmortization.Models.LoanPaymentView>
+
+
+<div>
+    <table class="table">
+        <tr>
+            <th>
+                Payment Date
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PaymentNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BeginningBalance)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ScheduledPayment)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PrincipalAmount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EndingBalance)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.InterestAmount)
+            </th>
+            <th>
+                Cummulative <br /> Interest
+            </th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.paymentDate)
+                </td>
+                <td>
+                    @{
+                   // string intnu = String.Format("{0,10}", item.PaymentNo.ToString());
+                    string intno = item.PaymentNo.ToString("n2");
+                }
+                @intno
+            </td>
+            <td>
+                @{
+                    string begbal = String.Format("{0,10}", item.BeginningBalance);
+                }
+                @begbal
+
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ScheduledPayment)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PrincipalAmount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EndingBalance)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InterestAmount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CummulativeInterestAmount)
+            </td>
+        </tr>
+      }
+
+    </table>
+</div>
