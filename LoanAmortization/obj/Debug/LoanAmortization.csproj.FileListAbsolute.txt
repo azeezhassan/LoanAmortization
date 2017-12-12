@@ -42,3 +42,47 @@ C:\Users\TOSIN\Documents\Visual Studio 2015\Projects\LoanAmortizationApp\LoanAmo
 C:\Users\TOSIN\Documents\Visual Studio 2015\Projects\LoanAmortizationApp\LoanAmortization\bin\PagedList.xml
 C:\Users\TOSIN\Documents\Visual Studio 2015\Projects\LoanAmortizationApp\LoanAmortization\bin\PagedList.Mvc.xml
 C:\Users\TOSIN\Documents\Visual Studio 2015\Projects\LoanAmortizationApp\LoanAmortization\obj\Debug\LoanAmortization.csprojResolveAssemblyReference.cache
+C:\Users\LAG004PC\Desktop\repos\LoanAmortization\LoanAmortization\bin\roslyn\csc.exe
+C:\Users\LAG004PC\Desktop\repos\LoanAmortization\LoanAmortization\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\LAG004PC\Desktop\repos\LoanAmortization\LoanAmortization\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\LAG004PC\Desktop\repos\LoanAmortization\LoanAmortization\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\LAG004PC\Desktop\repos\LoanAmortization\LoanAmortization\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\LAG004PC\Desktop\repos\LoanAmortization\LoanAmortization\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\LAG004PC\Desktop\repos\LoanAmortization\LoanAmortization\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\LAG004PC\Desktop\repos\LoanAmortization\LoanAmortization\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\LAG004PC\Desktop\repos\LoanAmortization\LoanAmortization\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\LAG004PC\Desktop\repos\LoanAmortization\LoanAmortization\bin\roslyn\vbc.exe
+C:\Users\LAG004PC\Desktop\repos\LoanAmortization\LoanAmortization\bin\roslyn\VBCSCompiler.exe
+C:\Users\LAG004PC\Desktop\repos\LoanAmortization\LoanAmortization\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\LAG004PC\Desktop\repos\LoanAmortization\LoanAmortization\bin\LoanAmortization.dll.config
+C:\Users\LAG004PC\Desktop\repos\LoanAmortization\LoanAmortization\bin\LoanAmortization.dll
+C:\Users\LAG004PC\Desktop\repos\LoanAmortization\LoanAmortization\bin\LoanAmortization.pdb
+C:\Users\LAG004PC\Desktop\repos\LoanAmortization\LoanAmortization\bin\Antlr3.Runtime.dll
+C:\Users\LAG004PC\Desktop\repos\LoanAmortization\LoanAmortization\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\LAG004PC\Desktop\repos\LoanAmortization\LoanAmortization\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\LAG004PC\Desktop\repos\LoanAmortization\LoanAmortization\bin\Newtonsoft.Json.dll
+C:\Users\LAG004PC\Desktop\repos\LoanAmortization\LoanAmortization\bin\PagedList.dll
+C:\Users\LAG004PC\Desktop\repos\LoanAmortization\LoanAmortization\bin\PagedList.Mvc.dll
+C:\Users\LAG004PC\Desktop\repos\LoanAmortization\LoanAmortization\bin\System.Web.Helpers.dll
+C:\Users\LAG004PC\Desktop\repos\LoanAmortization\LoanAmortization\bin\System.Web.Mvc.dll
+C:\Users\LAG004PC\Desktop\repos\LoanAmortization\LoanAmortization\bin\System.Web.Optimization.dll
+C:\Users\LAG004PC\Desktop\repos\LoanAmortization\LoanAmortization\bin\System.Web.Razor.dll
+C:\Users\LAG004PC\Desktop\repos\LoanAmortization\LoanAmortization\bin\System.Web.WebPages.Deployment.dll
+C:\Users\LAG004PC\Desktop\repos\LoanAmortization\LoanAmortization\bin\System.Web.WebPages.dll
+C:\Users\LAG004PC\Desktop\repos\LoanAmortization\LoanAmortization\bin\System.Web.WebPages.Razor.dll
+C:\Users\LAG004PC\Desktop\repos\LoanAmortization\LoanAmortization\bin\WebGrease.dll
+C:\Users\LAG004PC\Desktop\repos\LoanAmortization\LoanAmortization\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\LAG004PC\Desktop\repos\LoanAmortization\LoanAmortization\bin\PagedList.xml
+C:\Users\LAG004PC\Desktop\repos\LoanAmortization\LoanAmortization\bin\PagedList.Mvc.xml
+C:\Users\LAG004PC\Desktop\repos\LoanAmortization\LoanAmortization\bin\System.Web.Helpers.xml
+C:\Users\LAG004PC\Desktop\repos\LoanAmortization\LoanAmortization\bin\System.Web.Mvc.xml
+C:\Users\LAG004PC\Desktop\repos\LoanAmortization\LoanAmortization\bin\System.Web.Optimization.xml
+C:\Users\LAG004PC\Desktop\repos\LoanAmortization\LoanAmortization\bin\System.Web.Razor.xml
+C:\Users\LAG004PC\Desktop\repos\LoanAmortization\LoanAmortization\bin\System.Web.WebPages.xml
+C:\Users\LAG004PC\Desktop\repos\LoanAmortization\LoanAmortization\bin\System.Web.WebPages.Deployment.xml
+C:\Users\LAG004PC\Desktop\repos\LoanAmortization\LoanAmortization\bin\System.Web.WebPages.Razor.xml
+C:\Users\LAG004PC\Desktop\repos\LoanAmortization\LoanAmortization\bin\Antlr3.Runtime.pdb
+C:\Users\LAG004PC\Desktop\repos\LoanAmortization\LoanAmortization\bin\Newtonsoft.Json.xml
+C:\Users\LAG004PC\Desktop\repos\LoanAmortization\LoanAmortization\obj\Debug\LoanAmortization.csprojResolveAssemblyReference.cache
+C:\Users\LAG004PC\Desktop\repos\LoanAmortization\LoanAmortization\obj\Debug\LoanAmortization.dll
+C:\Users\LAG004PC\Desktop\repos\LoanAmortization\LoanAmortization\obj\Debug\LoanAmortization.pdb
